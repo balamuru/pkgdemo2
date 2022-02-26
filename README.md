@@ -1,12 +1,12 @@
 # pkgdemo
-Demonstration of local packaging in Golang
+Demonstration o packaging in Golang backed by GitHub
 
 ## Layout
 ```
 .
 ├── driver              package containing invoking program
 │   ├── driver.go       invoking program that referemces the greetings module
-│   └── go.mod          module file containing module reference and "replace" directive that points to local version
+│   └── go.mod          module file containing reference  to the greetings
 ├── greetings           package containing greeting module
     ├── go.mod          module file that describes the greeting module
     └── greetings.go    greeting module
@@ -25,6 +25,8 @@ go mod init
 // create and code up greetings.go - see source
 ```
 
+## Push changes to Github
+
 ## Invoke the `driver` module locally (does not require publication to github)
 ```
 cd ..
@@ -32,7 +34,6 @@ mkdir driver
 cd driver
 go mod init
 //create driver program - see source
-//go mod edit -replace github.com/balamuru/pkgdemo/greetings=../greetings //replace github module as needed
 go mod tidy
 ```
 
